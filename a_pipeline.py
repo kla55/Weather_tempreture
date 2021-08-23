@@ -38,7 +38,7 @@ def inverse_difference(history, yhat, interval=1):
 
 def cleaning(df, city, time_hr, value = None):
     city_df = cleaning_df(df, city, time_hr)
-    city_df['year'] = pd.to_datetime(vancouver_df['datetime']).dt.year
+    city_df['year'] = pd.to_datetime(city_df['datetime']).dt.year
     y = city_df.drop('year', axis = 1)
 
     z = y['temp_c']
